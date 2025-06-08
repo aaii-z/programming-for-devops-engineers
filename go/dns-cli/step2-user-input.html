@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 2: User Input - DNS Frog Gopher</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <img src="../../images/froggy.svg" alt="Froggy the Learning Assistant" id="froggy-header-icon">
+        <h1>DNS Frog Gopher: Step 2</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html"><img src="../../images/nav_home.svg" class="nav-icon" alt="Home icon"> Home</a></li>
+                <li><a href="../../introduction.html"><img src="../../images/nav_intro.svg" class="nav-icon" alt="Introduction icon"> Introduction</a></li>
+                <li><a href="../../bash.html"><img src="../../images/nav_bash.svg" class="nav-icon" alt="Bash icon"> Bash & Shell Scripting</a></li>
+                <li><a href="../index.html"><img src="../../images/nav_go.svg" class="nav-icon" alt="Go icon"> Go for Backend</a></li>
+                <li><a href="../../js_react.html"><img src="../../images/nav_react.svg" class="nav-icon" alt="React icon"> JavaScript & React</a></li>
+                <li><a href="../../devops_skills.html"><img src="../../images/nav_devops.svg" class="nav-icon" alt="DevOps icon"> DevOps Skills</a></li>
+                <li><a href="../../full_stack.html"><img src="../../images/nav_fullstack.svg" class="nav-icon" alt="Full-stack icon"> Full-Stack Dev</a></li>
+                <li><a href="../../final_projects.html"><img src="../../images/nav_projects.svg" class="nav-icon" alt="Projects icon"> Final Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <nav class="project-nav">
+            <p><strong>Project Steps:</strong></p>
+            <ul>
+                <li><a href="index.html">Overview & Diagram</a></li>
+                <li><a href="step0-setup.html">Step 0: Gearing Up</a></li>
+                <li><a href="step1-first-lookup.html">Step 1: First Lookup</a></li>
+                <li><a href="step2-user-input.html" class="active-step">Step 2: User Input</a></li>
+                <li><a href="step3-flags.html">Step 3: Adding Flags (Coming Soon)</a></li>
+            </ul>
+            <a href="../index.html" class="back-to-projects-link">&laquo; Back to All Go Projects</a>
+        </nav>
+        <article class="project-content reveal-on-scroll">
+            <h2>Step 2: Taking User Input - Making it Interactive!</h2> <!-- Page specific H2 -->
+            <p>"Hardcoding 'google.com' was fun for a first spell," Froggy says, "but a real DNS tool needs to look up any domain we tell it to! Let's make our DNS Frog Gopher interactive by reading the domain name from the command line."</p>
+
+            <h4>🐸 Froggy Explains: Command-Line Arguments with <code>os.Args</code></h4>
+            <p>When you run a command in your terminal, like <code>go run dnsfrog.go example.com</code>, the words that come after the command itself (<code>example.com</code> in this case) are called <strong>command-line arguments</strong>.</p>
+            <p>Go gives us a way to access these arguments through a special variable called <code>os.Args</code>. To use it, we first need to import the <code>"os"</code> package, which provides functions for interacting with the operating system.</p>
+            <p><code>os.Args</code> is a "slice" of strings. Froggy explains, "Slices are like flexible, expandable lily pads that can hold a list of similar items – in this case, strings!"</p>
+            <ul>
+                <li><code>os.Args[0]</code> is always the name of the program being run (e.g., <code>dnsfrog.go</code> if you use <code>go run</code>, or just <code>dnsfrog</code> if you run a compiled binary).</li>
+                <li><code>os.Args[1]</code> is the first argument after the program name.</li>
+                <li><code>os.Args[2]</code> is the second, and so on.</li>
+            </ul>
+            <p>We also need to check if the user actually provided an argument. If they don't, <code>os.Args</code> will only have one item (the program name), and trying to access <code>os.Args[1]</code> would cause a "panic" (Go's way of saying something went very wrong!). Froggy says, "Always check your spells before you cast them too widely!" We can check the length of the slice using <code>len(os.Args)</code>.</p>
+
+            <h4>✨ Updating Our Code for User Input</h4>
+            <p>Let's modify our <code>dnsfrog.go</code> file. Froggy will point out the changes:</p>
+            <pre data-language="go"><code>package main
+
+import (
+    "fmt"
+    "log"
+    "net"
+    "os" // <-- Froggy says: New import!
+)
+
+func main() {
+    // Froggy says: Check if the user gave us a domain name!
+    if len(os.Args) < 2 {
+        // fmt.Println("Usage: go run dnsfrog.go <domain>")
+        // log.Fatalf("Oops! Froggy needs a domain name to look up. For example: go run dnsfrog.go google.com")
+        // Better: Print usage to stderr and exit with a different status for scripts
+        fmt.Fprintf(os.Stderr, "Usage: %s <domain>\n", os.Args[0])
+        fmt.Fprintln(os.Stderr, "Oops! Froggy needs a domain name to look up.")
+        fmt.Fprintln(os.Stderr, "For example: go run dnsfrog.go google.com")
+        os.Exit(1) // Exit with status 1 to indicate an error
+    }
+
+    domain := os.Args[1] // Get the domain from the first argument
+
+    fmt.Printf("Froggy is looking up A records for: %s\n", domain)
+
+    ips, err := net.LookupHost(domain)
+    if err != nil {
+        log.Fatalf("Oh no, Froggy couldn't look up the domain %s: %v\n", domain, err)
+    }
+
+    if len(ips) == 0 {
+        fmt.Printf("Froggy found no A records for %s.\n", domain)
+        return
+    }
+
+    fmt.Printf("Hoppy day! Froggy found these IP addresses for %s:\n", domain)
+    for _, ip := range ips {
+        fmt.Printf("- %s\n", ip)
+    }
+}
+</code></pre>
+
+            <h4>🧪 Testing Our Interactive Tool</h4>
+            <p>Save your <code>dnsfrog.go</code> file. Now, in your terminal, try running it with different domain names:</p>
+            <pre data-language="bash"><code>go run dnsfrog.go developers.google.com
+go run dnsfrog.go gnu.org
+go run dnsfrog.go yourfavoriteblog.com</code></pre>
+            <p>Froggy asks, "What happens if you run it without any domain name?"</p>
+            <pre data-language="bash"><code>go run dnsfrog.go</code></pre>
+            <p>You should see our helpful usage message! "See? Our error check worked!" Froggy ribbits proudly.</p>
+
+            <div class="froggy-tip">
+                <img src="../../images/froggy.svg" alt="Froggy giving a tip"> <!-- Adjusted path -->
+                <p><strong>Froggy's Input Tip:</strong> Using <code>os.Args</code> is simple for basic inputs. For more complex CLIs with named options (like <code>-type=MX</code>), Go has a fantastic <code>flag</code> package. Guess what we'll explore in the next step? 😉</p>
+            </div>
+            <div class="step-navigation">
+                <a href="step1-first-lookup.html" class="cta-button prev-button">&laquo; Step 1</a>
+                <a href="step3-flags.html" class="cta-button next-button">Next: Step 3 (Coming Soon) &raquo;</a>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <img src="../../images/froggy.svg" alt="Froggy Icon">
+                <span>DevOps Learning Adventure</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../introduction.html">Introduction</a></li>
+                <li><a href="../../bash.html">Bash</a></li>
+                <li><a href="../index.html">Go</a></li>
+                <li><a href="../../js_react.html">React</a></li>
+            </ul>
+            <p class="footer-copyright">&copy; 2024 DevOps Learning Adventure. Hop to it!</p>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 1: First Lookup - DNS Frog Gopher</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <img src="../../images/froggy.svg" alt="Froggy the Learning Assistant" id="froggy-header-icon">
+        <h1>DNS Frog Gopher: Step 1</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html"><img src="../../images/nav_home.svg" class="nav-icon" alt="Home icon"> Home</a></li>
+                <li><a href="../../introduction.html"><img src="../../images/nav_intro.svg" class="nav-icon" alt="Introduction icon"> Introduction</a></li>
+                <li><a href="../../bash.html"><img src="../../images/nav_bash.svg" class="nav-icon" alt="Bash icon"> Bash & Shell Scripting</a></li>
+                <li><a href="../index.html"><img src="../../images/nav_go.svg" class="nav-icon" alt="Go icon"> Go for Backend</a></li>
+                <li><a href="../../js_react.html"><img src="../../images/nav_react.svg" class="nav-icon" alt="React icon"> JavaScript & React</a></li>
+                <li><a href="../../devops_skills.html"><img src="../../images/nav_devops.svg" class="nav-icon" alt="DevOps icon"> DevOps Skills</a></li>
+                <li><a href="../../full_stack.html"><img src="../../images/nav_fullstack.svg" class="nav-icon" alt="Full-stack icon"> Full-Stack Dev</a></li>
+                <li><a href="../../final_projects.html"><img src="../../images/nav_projects.svg" class="nav-icon" alt="Projects icon"> Final Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <nav class="project-nav">
+            <p><strong>Project Steps:</strong></p>
+            <ul>
+                <li><a href="index.html">Overview & Diagram</a></li>
+                <li><a href="step0-setup.html">Step 0: Gearing Up</a></li>
+                <li><a href="step1-first-lookup.html" class="active-step">Step 1: First Lookup</a></li>
+                <li><a href="step2-user-input.html">Step 2: User Input</a></li>
+                <li><a href="step3-flags.html">Step 3: Adding Flags (Coming Soon)</a></li>
+            </ul>
+            <a href="../index.html" class="back-to-projects-link">&laquo; Back to All Go Projects</a>
+        </nav>
+        <article class="project-content reveal-on-scroll">
+            <h2>Step 1: Our First Lookup - A Simple Spell!</h2> <!-- Page specific H2 -->
+            <p>"Alright, let's cast our first Go spell!" Froggy exclaims. "We'll make a tiny program that looks up the IP address (an 'A' record) for a website. For now, we'll just hardcode 'google.com' to see how it works."</p>
+            <p>First, create a new directory for our project, maybe called <code>dnsfrog</code>. Inside this directory, create a file named <code>dnsfrog.go</code>. Froggy says, "All Go source code files end with <code>.go</code>!"</p>
+
+            <h4>🐸 Froggy Explains: The Basic Structure of a Go Program</h4>
+            <p>Every Go program needs a few key ingredients:</p>
+            <ul>
+                <li><strong><code>package main</code></strong>: This tells Go that our program is an executable one (a command we can run), not just a library of spells for other programs to use. Our main spellbook starts here!</li>
+                <li><strong><code>import (...)</code></strong>: Go has a treasure trove of built-in "packages" that give us ready-made spells. The <code>import</code> statement is how we tell Go which spellbooks (packages) we need. For this step, we'll need:
+                    <ul>
+                        <li><code>"fmt"</code>: Short for "format", this package helps us print things to the screen. It's like Froggy's magic megaphone!</li>
+                        <li><code>"log"</code>: This package helps us print error messages if something goes a bit wobbly.</li>
+                        <li><code>"net"</code>: This package is full of networking spells, including the ones for DNS lookups!</li>
+                    </ul>
+                </li>
+                <li><strong><code>func main() { ... }</code></strong>: This is the main entry point of our program – the first spell Go will cast when we run our tool. All our main logic will go inside these curly braces <code>{}</code>.</li>
+            </ul>
+
+            <h4>✨ The Code for Our First Lookup</h4>
+            <p>Type (or copy) this into your <code>dnsfrog.go</code> file, Froggy cheers you on!</p>
+            <pre data-language="go"><code>package main
+
+import (
+    "fmt"
+    "log"
+    "net"
+)
+
+func main() {
+    domain := "google.com" // Our hardcoded domain for now!
+
+    fmt.Printf("Froggy is looking up A records for: %s\n", domain)
+
+    ips, err := net.LookupHost(domain) // This is the magic DNS lookup spell!
+    if err != nil {
+        log.Fatalf("Oh no, Froggy couldn't look up the domain %s: %v\n", domain, err)
+    }
+
+    if len(ips) == 0 {
+        fmt.Printf("Froggy found no A records for %s.\n", domain)
+        return
+    }
+
+    fmt.Printf("Hoppy day! Froggy found these IP addresses for %s:\n", domain)
+    for _, ip := range ips { // We loop through all the IPs found
+        fmt.Printf("- %s\n", ip)
+    }
+}
+</code></pre>
+
+            <h4>Running Your First Go Spell!</h4>
+            <p>Froggy says, "Now for the exciting part!" Open your terminal, navigate to your <code>dnsfrog</code> directory, and type:</p>
+            <pre data-language="bash"><code>go run dnsfrog.go</code></pre>
+            <p>If all goes well, you should see the IP addresses for google.com! "Ribbiting, isn't it?" Froggy exclaims. "You've just performed your first DNS lookup with Go!"</p>
+            <p><strong>What happened here?</strong></p>
+            <ul>
+                <li>We declared a <code>domain</code> variable and set it to "google.com".</li>
+                <li><code>net.LookupHost(domain)</code> is the Go function that does the actual work of finding IP addresses (A or AAAA records) for the domain.</li>
+                <li>It returns two things: a list (called a "slice" in Go) of IP addresses (<code>ips</code>) and a potential error (<code>err</code>).</li>
+                <li><code>if err != nil { ... }</code> is how we check for errors in Go. If <code>err</code> is not <code>nil</code> (nil means 'nothing' or 'no error here'), we use <code>log.Fatalf(...)</code> to print an error message and stop the program. Froggy says, "Good wizards always check for misfires!"</li>
+                <li>If there's no error, we loop through the <code>ips</code> slice using a <code>for _, ip := range ips</code> loop and print each IP address.</li>
+            </ul>
+            <div class="froggy-tip">
+                <img src="../../images/froggy.svg" alt="Froggy giving a tip"> <!-- Adjusted path -->
+                <p><strong>Froggy's First Go Tip:</strong> Go is all about simplicity and clarity! Notice how clean the error checking is. And <code>go run</code> is a super handy command to quickly compile and run your Go programs without creating a separate executable file yet.</p>
+            </div>
+            <div class="step-navigation">
+                <a href="step0-setup.html" class="cta-button prev-button">&laquo; Step 0</a>
+                <a href="step2-user-input.html" class="cta-button next-button">Next: Step 2 &raquo;</a>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <img src="../../images/froggy.svg" alt="Froggy Icon">
+                <span>DevOps Learning Adventure</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../introduction.html">Introduction</a></li>
+                <li><a href="../../bash.html">Bash</a></li>
+                <li><a href="../index.html">Go</a></li>
+                <li><a href="../../js_react.html">React</a></li>
+            </ul>
+            <p class="footer-copyright">&copy; 2024 DevOps Learning Adventure. Hop to it!</p>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

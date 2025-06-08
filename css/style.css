@@ -482,3 +482,112 @@ hr.section-divider {
     background-image: linear-gradient(to right, rgba(0, 77, 64, 0), rgba(0, 77, 64, 0.75), rgba(0, 77, 64, 0)); /* Dark Teal gradient */
     margin: 40px 0;
 }
+
+/* Project Listing on Language Index */
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px; /* Added margin for spacing */
+}
+.project-card {
+    background-color: #fff;
+    border: 1px solid #b2dfdb;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align:center;
+}
+.project-card h4 {
+    margin-top: 0;
+    color: #004d40;
+}
+.project-button { /* This is a class, can be applied to <a> or <button> */
+    margin-top:15px;
+    background-color: #00796b;
+    color:white !important; /* Ensure text color is white for buttons */
+    padding: 10px 20px; /* Standardized padding */
+    text-decoration: none; /* Remove underline from <a> tags styled as buttons */
+    display: inline-block; /* Ensure <a> tags behave like buttons */
+    border-radius: 5px; /* Standardized border-radius */
+    border: none; /* Remove border for <button> elements */
+    cursor: pointer; /* Ensure cursor is pointer */
+}
+.project-button:hover {
+    background-color: #004d40 !important;
+    color:white !important;
+}
+.project-button:disabled {
+    background-color: #ccc !important;
+    color: #666 !important; /* Darker text on disabled button */
+    cursor: not-allowed;
+}
+
+/* Project Specific Navigation (Sidebar/Top Section) */
+.project-nav {
+    background-color: #e0f2f1;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.project-nav p strong {
+    color: #004d40; /* Match dark teal */
+    font-size: 1.1em;
+}
+.project-nav ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px; /* Space below title */
+}
+.project-nav ul li a {
+    text-decoration: none;
+    color: #00796b;
+    display:block;
+    padding: 8px 10px; /* Slightly more padding */
+    border-radius: 5px; /* Add rounded corners to links */
+    transition: background-color 0.2s ease-in-out;
+}
+.project-nav ul li a.active-step {
+    font-weight: bold;
+    color: #004d40;
+    background-color: #c1dedd; /* Subtle background for active step */
+}
+.project-nav ul li a:hover:not(.active-step) { /* Prevent hover style on active step */
+    background-color: #cae6e4;
+    text-decoration: none; /* Remove underline from hover if not desired */
+}
+.back-to-projects-link {
+    display:block;
+    margin-top:15px;
+    color:#00796b;
+    text-decoration:none;
+    font-size: 0.9em;
+}
+.back-to-projects-link:hover {
+    text-decoration:underline;
+}
+
+/* Main content area for project steps */
+.project-content {
+    /* This class can be used to add specific padding/margins if different from main article styling */
+    /* For now, it will inherit from main/article styles or use its own if defined */
+}
+
+/* Step Navigation Buttons */
+.step-navigation {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #b2dfdb;
+    padding-top: 20px;
+}
+/* .step-navigation .prev-button, .step-navigation .next-button { } */ /* Using .cta-button for these */
+.step-navigation .prev-button {
+    background-color: #6c757d; /* Grey for prev */
+}
+.step-navigation .prev-button:hover {
+    background-color: #5a6268 !important; /* Important to override general .cta-button:hover */
+}
+/* Next button will use default .cta-button styles */
