@@ -23,17 +23,51 @@
             </ul>
         </nav>
     </header>
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/froggy.svg" alt="Froggy Waving" class="hero-froggy">
+            <h1>Learn Programming, the Fun DevOps Way!</h1>
+            <p class="hero-subtitle">Join Froggy on an adventure to master Bash, Go, React, and essential DevOps tools. Let's make learning an exciting quest!</p>
+            <a href="introduction.html" class="cta-button">Start Your Adventure!</a>
+        </div>
+    </section>
     <main>
-        <section id="welcome">
+        <section id="welcome" class="reveal-on-scroll">
             <h2>🚀 Your Fun Journey into DevOps Programming Starts Here!</h2>
             <p>Meet Froggy 🐸, your friendly guide on this programming adventure! Froggy will hop along with you, offering tips and encouragement as you explore new topics.</p>
             <p>Welcome to the DevOps Learning Adventure, where learning to code is an exciting quest! Whether you're looking to automate tasks, manage infrastructure, or build powerful tools, we've got you covered.</p>
             <p>Our courses are designed to be engaging and practical, helping you master essential programming skills with a smile. Explore topics like Bash scripting, Go, React, and much more, all tailored for the world of DevOps.</p>
             <p>Ready to level up your skills? Pick a topic from the navigation above and let the adventure begin!</p>
         </section>
+        <section id="tip-of-the-day" class="reveal-on-scroll">
+            <h2>💡 Froggy's Tip of the Day!</h2>
+            <div class="tip-container">
+                <img src="images/froggy.svg" alt="Froggy with a tip" class="tip-froggy">
+                <p id="tip-text">Loading a great tip for you...</p>
+            </div>
+            <div class="tip-controls">
+                <button id="prev-tip-btn" aria-label="Previous Tip">&laquo; Prev</button>
+                <button id="next-tip-btn" aria-label="Next Tip">Next &raquo;</button>
+            </div>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2024 DevOps Learning Adventure</p>
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <img src="images/froggy.svg" alt="Froggy Icon">
+                <span>DevOps Learning Adventure</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="bash.html">Bash</a></li>
+                <li><a href="go.html">Go</a></li>
+                <li><a href="js_react.html">React</a></li>
+                <!-- Add more links if desired, or a link to a sitemap/contact page in future -->
+            </ul>
+            <p class="footer-copyright">&copy; 2024 DevOps Learning Adventure. Hop to it!</p>
+        </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>
