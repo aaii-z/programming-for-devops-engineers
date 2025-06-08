@@ -8,6 +8,7 @@
 </head>
 <body>
     <header>
+        <img src="images/froggy.svg" alt="Froggy the Learning Assistant" id="froggy-header-icon">
         <h1>DevOps Skills with Programming</h1>
         <nav>
             <ul>
@@ -24,8 +25,42 @@
     </header>
     <main>
         <h2>🛠️ DevOps Skills with Programming</h2>
-        <!-- Content for this section will be added here -->
-        <p>Coming soon...</p>
+        <p>Beyond just learning programming languages, DevOps engineers need to know how to <strong>automate</strong> and <strong>integrate</strong> the tools they build into production systems.</p>
+
+        <h3>Key Topics:</h3>
+
+        <h4>CI/CD Pipelines:</h4>
+        <ul>
+            <li>Writing automation scripts (e.g., build and deploy Go applications with <code>Jenkins</code>, <code>GitLab CI</code>, or <code>GitHub Actions</code>).</li>
+            <li>Integrating your Go API into the pipeline to automatically deploy and test changes.</li>
+        </ul>
+
+        <h4>Infrastructure as Code (IaC):</h4>
+        <ul>
+            <li>Writing <code>Terraform</code> scripts (preferably in Go) to provision cloud infrastructure.</li>
+            <li>Using <code>Ansible</code> or <code>Chef</code> to automate server configuration.</li>
+        </ul>
+
+        <h4>Containerization with Docker:</h4>
+        <ul>
+            <li>Writing <code>Dockerfiles</code> to containerize Go applications.</li>
+            <li>Using <code>Docker Compose</code> to run multi-container applications.</li>
+            <li>Deploying Go applications in a <code>Kubernetes</code> environment.</li>
+        </ul>
+
+        <h4>Monitoring & Logging:</h4>
+        <ul>
+            <li>Integrating logging and monitoring tools in your Go applications (e.g., using <code>Prometheus</code> for metrics, <code>Grafana</code> for visualization).</li>
+            <li>Writing Go code to send metrics and logs to centralized logging systems (e.g., <code>ELK stack</code> or <code>Loki</code>).</li>
+            <li>Building alerts in Go to monitor system health and automatically respond to incidents.</li>
+        </ul>
+
+        <h3>Practice:</h3>
+        <ul>
+            <li><strong>Create a CI/CD Pipeline</strong>: Set up a pipeline that automatically builds, tests, and deploys a Go app on code commit.</li>
+            <li><strong>Dockerize the Backend</strong>: Create a Docker image for your Go app, configure it with <code>Docker Compose</code>, and deploy it to <code>Kubernetes</code>.</li>
+            <li><strong>Monitoring</strong>: Use Go to integrate <code>Prometheus</code> and <code>Grafana</code> for real-time monitoring and alerts for your backend system.</li>
+        </ul>
     </main>
     <footer>
         <p>&copy; 2024 DevOps Learning Adventure</p>

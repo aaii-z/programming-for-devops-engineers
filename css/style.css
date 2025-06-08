@@ -11,12 +11,16 @@ header {
     background-color: #00796b; /* Teal */
     color: #ffffff; /* White */
     padding: 25px 40px; /* Increased padding */
-    text-align: center; /* Center align header content */
+    /* text-align: center; */ /* Replaced by flex properties */
     border-bottom: 5px solid #004d40; /* Darker Teal border */
+    display: flex; /* Use flexbox for easier alignment */
+    align-items: center; /* Vertically align items in header */
+    justify-content: center; /* Horizontally center items */
+    flex-wrap: wrap; /* Allow items to wrap if space is tight */
 }
 
 header h1 {
-    margin: 0;
+    margin: 0; /* Reset margin, adjust if needed due to flexbox */
     font-size: 2.5em; /* Larger font size */
     font-weight: bold;
 }
@@ -106,4 +110,44 @@ pre { /* Style for code blocks if any */
     padding: 10px;
     border-radius: 5px;
     overflow-x: auto;
+}
+
+#froggy-header-icon {
+    width: 60px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle; /* Align with the text better */
+    margin-right: 15px;
+}
+
+header nav { /* Ensure nav behaves well in flex header */
+    width: 100%;
+    text-align: center; /* Re-center nav ul if it's full width */
+    margin-top: 10px; /* Add some space if needed */
+}
+
+.froggy-tip {
+    background-color: #e6ffed; /* Light mint green, plays on Froggy's color */
+    border-left: 6px solid #4CAF50; /* Green accent border */
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+}
+
+.froggy-tip img {
+    width: 50px; /* Smaller Froggy for tips */
+    height: auto;
+    margin-right: 15px;
+    flex-shrink: 0; /* Prevent Froggy from shrinking */
+}
+
+.froggy-tip p {
+    margin: 0; /* Remove default paragraph margin */
+    color: #38761d; /* Darker green text for readability */
+    font-size: 0.95em;
+}
+
+.froggy-tip p strong { /* Style for any strong text within the tip */
+    color: #2e6115;
 }
