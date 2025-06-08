@@ -400,6 +400,17 @@ blockquote p {
     transform: translateY(0);
 }
 
+.froggy-intro {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #004d40; /* Dark Teal, consistent with body text */
+    background-color: #e6ffed; /* Very light mint green */
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #4CAF50; /* Green accent */
+}
+
 /* Tip of the Day Section Styles */
 #tip-of-the-day {
     background-color: #e0f2f1; /* Light teal/mint background */
@@ -463,4 +474,11 @@ blockquote p {
 .tip-controls button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+hr.section-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 77, 64, 0), rgba(0, 77, 64, 0.75), rgba(0, 77, 64, 0)); /* Dark Teal gradient */
+    margin: 40px 0;
 }
