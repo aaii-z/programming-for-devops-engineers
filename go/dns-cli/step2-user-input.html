@@ -39,7 +39,10 @@
             <h2>Step 2: Taking User Input - Making it Interactive!</h2> <!-- Page specific H2 -->
             <p>"Hardcoding 'google.com' was fun for a first spell," Froggy says, "but a real DNS tool needs to look up any domain we tell it to! Let's make our DNS Frog Gopher interactive by reading the domain name from the command line."</p>
 
-            <h4>🐸 Froggy Explains: Command-Line Arguments with <code>os.Args</code></h4>
+            <div style="display: flex; align-items: center; margin-bottom: 1em;">
+                <img src="../../images/froggy_explaining.svg" alt="Froggy Explaining os.Args" style="width:60px; margin-right:15px; flex-shrink:0;">
+                <h4>🐸 Froggy Explains: Command-Line Arguments with <code>os.Args</code></h4>
+            </div>
             <p>When you run a command in your terminal, like <code>go run dnsfrog.go example.com</code>, the words that come after the command itself (<code>example.com</code> in this case) are called <strong>command-line arguments</strong>.</p>
             <p>Go gives us a way to access these arguments through a special variable called <code>os.Args</code>. To use it, we first need to import the <code>"os"</code> package, which provides functions for interacting with the operating system.</p>
             <p><code>os.Args</code> is a "slice" of strings. Froggy explains, "Slices are like flexible, expandable lily pads that can hold a list of similar items – in this case, strings!"</p>
@@ -99,12 +102,15 @@ func main() {
             <pre data-language="bash"><code>go run dnsfrog.go developers.google.com
 go run dnsfrog.go gnu.org
 go run dnsfrog.go yourfavoriteblog.com</code></pre>
-            <p>Froggy asks, "What happens if you run it without any domain name?"</p>
+            <div style="display: flex; align-items: center; margin-top: 1.5em; margin-bottom: 1em;">
+                <img src="../../images/froggy_thinking.svg" alt="Froggy Thinking" style="width:60px; margin-right:15px; flex-shrink:0;">
+                <p style="margin:0;">Froggy asks, "What happens if you run it without any domain name?"</p>
+            </div>
             <pre data-language="bash"><code>go run dnsfrog.go</code></pre>
             <p>You should see our helpful usage message! "See? Our error check worked!" Froggy ribbits proudly.</p>
 
             <div class="froggy-tip">
-                <img src="../../images/froggy.svg" alt="Froggy giving a tip"> <!-- Adjusted path -->
+                <img src="../../images/froggy_explaining.svg" alt="Froggy giving a tip"> <!-- Changed SVG -->
                 <p><strong>Froggy's Input Tip:</strong> Using <code>os.Args</code> is simple for basic inputs. For more complex CLIs with named options (like <code>-type=MX</code>), Go has a fantastic <code>flag</code> package. Guess what we'll explore in the next step? 😉</p>
             </div>
             <div class="step-navigation">

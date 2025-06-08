@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+  <style> .box { fill: #e0f2f1; stroke: #00796b; stroke-width: 1.5; } .arrow { fill: #004d40; } .text { font-family: 'Arial Rounded MT Bold', sans-serif; font-size: 10px; text-anchor: middle; fill: #004d40;} .label { font-size: 8px;} </style>
+  <rect x="20" y="50" width="80" height="50" rx="5" class="box"/> <text x="60" y="70" class="text">You</text><text x="60" y="85" class="text label">(Terminal)</text>
+  <path d="M100 75 L140 75 L130 65 M140 75 L130 85" class="arrow" stroke="#004d40" stroke-width="1.5" fill="none"/> <text x="120" y="65" class="text label">domain_name</text>
+  <rect x="150" y="50" width="100" height="50" rx="5" class="box"/> <text x="200" y="70" class="text">DNS Frog Gopher</text><text x="200" y="85" class="text label">(Go CLI Tool)</text>
+  <path d="M250 75 L290 75 L280 65 M290 75 L280 85" class="arrow" stroke="#004d40" stroke-width="1.5" fill="none"/> <text x="270" y="65" class="text label">DNS Records</text>
+  <rect x="300" y="50" width="80" height="50" rx="5" class="box"/> <text x="340" y="80" class="text">Output</text>
+</svg>

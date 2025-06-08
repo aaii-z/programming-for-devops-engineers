@@ -1,0 +1,19 @@
+<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { fill: #e0f2f1; stroke: #00796b; stroke-width: 1.5; }
+    .arrow { fill: #004d40; }
+    .text { font-family: 'Arial Rounded MT Bold', sans-serif; font-size: 10px; text-anchor: middle; fill: #004d40;}
+    .label { font-size: 8px; }
+  </style>
+  <rect x="20" y="80" width="100" height="60" rx="5" class="box"/>
+  <text x="70" y="115" class="text">Server Buddy Script</text>
+  <path d="M120 110 L160 110 L160 90 L180 110 L160 130 L160 110 Z" class="arrow"/>
+  <text x="140" y="100" class="text label">SSH</text>
+  <rect x="180" y="40" width="120" height="140" rx="5" class="box"/>
+  <text x="240" y="60" class="text">Remote Server</text>
+  <text x="240" y="80" class="text label">- Install Packages</text>
+  <text x="240" y="95" class="text label">- Configure Firewall</text>
+  <text x="240" y="110" class="text label">- Health Checks</text>
+  <path d="M180 120 L140 120 L140 140 L120 120 L140 100 L140 120 Z" class="arrow" transform="translate(0 10)"/>
+  <text x="150" y="145" class="text label">Report</text>
+</svg>

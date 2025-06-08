@@ -1,0 +1,10 @@
+<svg viewBox="0 0 350 250" xmlns="http://www.w3.org/2000/svg">
+  <style> .box { fill: #e0f2f1; stroke: #00796b; stroke-width: 1.5; } .text { font-family: 'Arial Rounded MT Bold', sans-serif; font-size: 10px; text-anchor: middle; fill: #004d40;} .label { font-size: 8px;} </style>
+  <rect x="10" y="10" width="330" height="230" rx="10" fill="#fff" stroke="#ccc"/>
+  <rect x="20" y="20" width="310" height="30" fill="#f0f0f0"/> <text x="175" y="40" class="text">DevOps Control Center</text>
+  <rect x="30" y="60" width="130" height="70" rx="5" class="box"/> <text x="95" y="95" class="text">Server Status Widget</text>
+  <rect x="190" y="60" width="130" height="70" rx="5" class="box"/> <text x="255" y="95" class="text">Pipeline Widget</text>
+  <rect x="30" y="150" width="130" height="70" rx="5" class="box"/> <text x="95" y="185" class="text">Code Quality Widget</text>
+  <ellipse cx="255" cy="185" rx="30" ry="15" class="box"/> <text x="255" y="190" class="text label">Mock API</text>
+  <path d="M255 165 L225 135 L235 140 M225 135 L230 145" stroke="#004d40" stroke-width="1.5" fill="none"/>
+</svg>

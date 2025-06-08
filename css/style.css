@@ -401,14 +401,16 @@ blockquote p {
 }
 
 .froggy-intro {
-    font-size: 1.1em;
-    line-height: 1.7;
-    margin-bottom: 25px;
-    color: #004d40; /* Dark Teal, consistent with body text */
-    background-color: #e6ffed; /* Very light mint green */
-    padding: 15px;
-    border-radius: 8px;
-    border-left: 5px solid #4CAF50; /* Green accent */
+    /* background-color: #e0f7fa; */ /* Light Cyan - already used for body, let's try a slightly different one */
+    background-color: #b2dfdb; /* Light Teal */
+    color: #004d40; /* Dark Teal text */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #00796b; /* Teal dashed border */
+    margin-bottom: 30px; /* More space after intro */
+    position: relative; /* For potential Froggy icon placement inside */
+    font-size: 1.1em; /* Existing from previous */
+    line-height: 1.7; /* Existing from previous */
 }
 
 /* Tip of the Day Section Styles */
@@ -482,6 +484,87 @@ hr.section-divider {
     background-image: linear-gradient(to right, rgba(0, 77, 64, 0), rgba(0, 77, 64, 0.75), rgba(0, 77, 64, 0)); /* Dark Teal gradient */
     margin: 40px 0;
 }
+
+/* Inline Froggy for text sections */
+.inline-froggy {
+    width: 30px; /* Smaller for inline use */
+    height: auto;
+    vertical-align: bottom; /* Or middle, adjust as needed */
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/* Action Box for setup/running commands */
+.action-box {
+    background-color: #fff3e0; /* Light orange/amber */
+    border: 2px solid #ffb74d; /* Orange border */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+.action-box h4 {
+    color: #bf360c; /* Dark orange/brown */
+    margin-top: 0;
+}
+.action-box code { /* Specific code styling within action box if needed */
+    background-color: #ffe0b2; /* Lighter orange for code background */
+}
+
+
+/* Key Concept Box */
+.key-concept-box {
+    background-color: #e3f2fd; /* Light blue */
+    border: 1px solid #90caf9; /* Blue border */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    overflow: auto; /* To contain floated elements like inline-froggy */
+}
+.key-concept-box h4 {
+    color: #0d47a1; /* Dark blue */
+    margin-top: 0;
+    display: inline; /* Allow text to wrap around floated image if any */
+}
+.key-concept-box ul ul { /* For nested lists inside concept box */
+    list-style-type: circle; /* Different bullet for sub-items */
+    margin-left: 20px; /* Indent nested list */
+    margin-top: 5px; /* Space above nested list */
+    margin-bottom: 5px; /* Space below nested list */
+}
+
+
+/* Code Breakdown Box */
+.code-breakdown-box {
+    background-color: #f5f5f5; /* Light grey */
+    border-left: 4px solid #757575; /* Grey accent */
+    padding: 15px;
+    margin: 25px 0; /* Increased margin */
+    font-size: 0.9em;
+}
+.code-breakdown-box h4 {
+    color: #424242; /* Darker grey */
+    margin-top: 0;
+}
+.code-breakdown-box ul {
+    padding-left: 20px; /* Standard padding for list inside */
+    list-style: disc; /* Ensure default bullets if not using custom */
+}
+.code-breakdown-box ul li {
+    margin-bottom: 8px;
+    padding-left: 0; /* Reset padding if main ul li has custom bullet padding */
+    position: static; /* Reset position if main ul li has custom bullet positioning */
+}
+.code-breakdown-box ul li::before {
+    content: none; /* Remove custom ::before from main ul li if any */
+    display: none;
+}
+.code-breakdown-box code { /* For inline code within breakdown */
+    background-color: #e0e0e0;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace; /* Keep it simple */
+}
+
 
 /* Project Listing on Language Index */
 .project-list {
@@ -591,3 +674,28 @@ hr.section-divider {
     background-color: #5a6268 !important; /* Important to override general .cta-button:hover */
 }
 /* Next button will use default .cta-button styles */
+
+.project-diagram {
+    background-color: #f8f9fa; /* Light grey background */
+    border: 1px solid #dee2e6; /* Subtle border */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0;
+    text-align: center;
+}
+.project-diagram h4 {
+    margin-top: 0;
+    color: #004d40; /* Dark Teal */
+    margin-bottom: 15px;
+}
+.project-diagram img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ced4da;
+    margin-bottom: 10px;
+}
+.project-diagram .diagram-caption {
+    font-size: 0.9em;
+    color: #495057; /* Grey text */
+    font-style: italic;
+}

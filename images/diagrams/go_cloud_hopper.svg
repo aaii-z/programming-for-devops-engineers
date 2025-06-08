@@ -1,0 +1,10 @@
+<svg viewBox="0 0 450 180" xmlns="http://www.w3.org/2000/svg">
+  <style> .box { fill: #e0f2f1; stroke: #00796b; stroke-width: 1.5; } .arrow { fill: #004d40; } .text { font-family: 'Arial Rounded MT Bold', sans-serif; font-size: 10px; text-anchor: middle; fill: #004d40;} .label { font-size: 8px;} </style>
+  <rect x="20" y="65" width="80" height="50" rx="5" class="box"/> <text x="60" y="85" class="text">You</text><text x="60" y="100" class="text label">(Terminal)</text>
+  <path d="M100 90 L140 90 L130 80 M140 90 L130 100" class="arrow" stroke="#004d40" stroke-width="1.5" fill="none"/> <text x="120" y="80" class="text label">filters</text>
+  <rect x="150" y="65" width="100" height="50" rx="5" class="box"/> <text x="200" y="85" class="text">Cloud Hopper</text><text x="200" y="100" class="text label">(Go CLI)</text>
+  <path d="M250 80 L290 80 L280 70 M290 80 L280 90" class="arrow" stroke="#004d40" stroke-width="1.5" fill="none"/> <text x="270" y="70" class="text label">API Req</text>
+  <path d="M290 100 L250 100 L260 110 M250 100 L260 90" class="arrow" stroke="#004d40" stroke-width="1.5" fill="none"/> <text x="270" y="120" class="text label">API Resp</text>
+  <ellipse cx="350" cy="90" rx="40" ry="25" class="box"/> <text x="350" y="95" class="text">Cloud API</text>
+  <path d="M220 115 L220 145 L210 135 M220 145 L230 135" transform="rotate(90 200 100)" class="arrow" stroke="#004d40" stroke-width="1.5" fill="none" /> <text x="200" y="140" class="text label">Output</text>
+</svg>

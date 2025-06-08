@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <style> .box { fill: #e0f2f1; stroke: #00796b; stroke-width: 1.5; } .circle { fill: #b2dfdb; stroke: #00796b; } .line { stroke: #004d40; stroke-width: 2;} .text { font-family: 'Arial Rounded MT Bold', sans-serif; font-size: 10px; text-anchor: middle; fill: #004d40;} .label { font-size: 8px;} </style>
+  <rect x="10" y="75" width="100" height="50" rx="5" class="box"/> <text x="60" y="95" class="text">User Input</text><text x="60" y="110" class="text label">(Git Commands)</text>
+  <path d="M110 100 L140 100 L130 90 M140 100 L130 110" stroke="#004d40" stroke-width="1.5" fill="none"/>
+  <rect x="150" y="75" width="100" height="50" rx="5" class="box"/> <text x="200" y="95" class="text">Git Branch Visualizer</text><text x="200" y="110" class="text label">(React App)</text>
+  <path d="M250 100 L280 100 L270 90 M280 100 L270 110" stroke="#004d40" stroke-width="1.5" fill="none"/>
+  <circle cx="300" cy="60" r="10" class="circle"/> <circle cx="340" cy="60" r="10" class="circle"/> <line x1="310" y1="60" x2="330" y2="60" class="line"/>
+  <circle cx="320" cy="100" r="10" class="circle"/> <line x1="300" y1="60" x2="320" y2="100" class="line"/>
+  <circle cx="360" cy="100" r="10" class="circle"/> <line x1="340" y1="60" x2="360" y2="100" class="line"/>
+  <text x="300" y="45" class="text label">main</text> <text x="330" y="125" class="text label">feat</text>
+</svg>
