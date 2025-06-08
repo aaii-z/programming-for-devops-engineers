@@ -1,56 +1,109 @@
 body {
-    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
-    background-color: #f0f8ff; /* AliceBlue */
-    color: #333;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    background-color: #e0f7fa; /* Light Cyan */
+    color: #004d40; /* Dark Teal */
     margin: 0;
-    padding: 20px;
-    text-align: center;
+    padding: 0;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #7fffd4; /* Aquamarine */
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    background-color: #00796b; /* Teal */
+    color: #ffffff; /* White */
+    padding: 25px 40px; /* Increased padding */
+    text-align: center; /* Center align header content */
+    border-bottom: 5px solid #004d40; /* Darker Teal border */
 }
 
 header h1 {
-    color: #2f4f4f; /* DarkSlateGray */
     margin: 0;
-}
-
-main {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-footer {
-    margin-top: 30px;
-    padding: 10px;
-    font-size: 0.8em;
-    color: #555;
+    font-size: 2.5em; /* Larger font size */
+    font-weight: bold;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 15px;
+    margin-top: 20px; /* Spacing from title */
+    text-align: center; /* Center navigation links */
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 15px;
+    display: inline-block; /* Use inline-block for better spacing control */
+    margin: 0 15px; /* Horizontal spacing */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #007bff; /* Bright blue for links */
+    color: #ffffff; /* White links */
     font-weight: bold;
+    font-size: 1.1em;
+    padding: 8px 12px; /* Padding for links */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-nav ul li a:hover {
-    color: #0056b3; /* Darker blue on hover */
-    text-decoration: underline;
+nav ul li a:hover, nav ul li a.active { /* Added .active class for current page */
+    background-color: #004d40; /* Dark Teal background on hover/active */
+    color: #e0f7fa; /* Light Cyan text on hover/active */
+}
+
+main {
+    padding: 20px 40px; /* More horizontal padding */
+    background-color: #ffffff; /* White background for content */
+    margin: 20px auto; /* Centering main content */
+    max-width: 900px; /* Max width for readability */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+main h2 {
+    color: #00796b; /* Teal */
+    border-bottom: 2px solid #b2dfdb; /* Light Teal underline */
+    padding-bottom: 10px;
+    margin-top: 30px; /* Space above section titles */
+}
+
+main h3 {
+    color: #004d40; /* Dark Teal */
+    margin-top: 25px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #004d40; /* Dark Teal */
+    background-color: #b2dfdb; /* Light Teal background */
+}
+
+a {
+    color: #00796b; /* Teal for general links */
+}
+
+a:hover {
+    color: #004d40; /* Darker Teal on hover */
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px; /* Space out list items */
+}
+
+code { /* Style for inline code if any */
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+pre { /* Style for code blocks if any */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
 }
