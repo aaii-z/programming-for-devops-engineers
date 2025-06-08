@@ -12,14 +12,14 @@
         <h1>Bash & Shell Scripting</h1>
         <nav>
             <ul>
-                <li><a href="index.html">🏠 Home</a></li>
-                <li><a href="introduction.html">📖 Introduction</a></li>
-                <li><a href="bash.html" class="active">🔩 Bash & Shell Scripting</a></li>
-                <li><a href="go.html">🐹 Go for Backend</a></li>
-                <li><a href="js_react.html">⚛️ JavaScript & React</a></li>
-                <li><a href="devops_skills.html">🛠️ DevOps Skills</a></li>
-                <li><a href="full_stack.html">🌐 Full-Stack Dev</a></li>
-                <li><a href="final_projects.html">🏆 Final Projects</a></li>
+                <li><a href="index.html"><img src="images/nav_home.svg" class="nav-icon" alt="Home icon"> Home</a></li>
+                <li><a href="introduction.html"><img src="images/nav_intro.svg" class="nav-icon" alt="Introduction icon"> Introduction</a></li>
+                <li><a href="bash.html" class="active"><img src="images/nav_bash.svg" class="nav-icon" alt="Bash icon"> Bash & Shell Scripting</a></li>
+                <li><a href="go.html"><img src="images/nav_go.svg" class="nav-icon" alt="Go icon"> Go for Backend</a></li>
+                <li><a href="js_react.html"><img src="images/nav_react.svg" class="nav-icon" alt="React icon"> JavaScript & React</a></li>
+                <li><a href="devops_skills.html"><img src="images/nav_devops.svg" class="nav-icon" alt="DevOps icon"> DevOps Skills</a></li>
+                <li><a href="full_stack.html"><img src="images/nav_fullstack.svg" class="nav-icon" alt="Full-stack icon"> Full-Stack Dev</a></li>
+                <li><a href="final_projects.html"><img src="images/nav_projects.svg" class="nav-icon" alt="Projects icon"> Final Projects</a></li>
             </ul>
         </nav>
     </header>
@@ -44,7 +44,23 @@
 
             <h3>Practice:</h3>
             <ul>
-                <li><strong>Automate</strong> backup and cleanup tasks on a server using shell scripts.</li>
+                <li><strong>Automate</strong> backup and cleanup tasks on a server using shell scripts.
+                    <p><em>Example script for automating backups:</em></p>
+<pre data-language="bash"><code>#!/bin/bash
+# Simple backup script example
+SRCDIR="/var/www/html"
+DSTDIR="/mnt/backups/daily"
+FILENAME="backup_$(date +%Y-%m-%d_%H-%M-%S).tar.gz"
+
+echo "Starting backup of ${SRCDIR}..."
+tar -czf "${DSTDIR}/${FILENAME}" "${SRCDIR}"
+
+if [ $? -eq 0 ]; then
+  echo "Backup successful: ${DSTDIR}/${FILENAME}"
+else
+  echo "Backup failed!"
+fi</code></pre>
+                </li>
                 <li><strong>Create</strong> a health check script to monitor system resources (e.g., disk space, CPU usage).</li>
             </ul>
         </section>
